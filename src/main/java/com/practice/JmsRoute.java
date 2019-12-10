@@ -21,7 +21,8 @@ public class JmsRoute extends RouteBuilder {
                 .process(new Processor() {
                     @Override
                     public void process(Exchange exchange) throws Exception {
-                        log.info("Exchange: {}", exchange);
+                        log.info("Exchange: {}", exchange.getMessage().toString());
+                        log.info("**********:{}", exchange.getMessage());
                     }
                 })
                 .loop()
